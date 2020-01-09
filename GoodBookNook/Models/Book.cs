@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace GoodBookNook.Models
 {
@@ -12,6 +11,8 @@ namespace GoodBookNook.Models
         private List<Review> reviews = new List<Review>();
 
         public string Title { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy}")]
         public DateTime PubDate { get; set; }
 
         // These are "navigational properties", they will
